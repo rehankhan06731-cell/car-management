@@ -1,19 +1,51 @@
 {
   "name": "car-management-backend",
   "version": "1.0.0",
+  "description": "REST API for a simple car‑management web app",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "dev": "nodemon src/server.js --watch src",
+    "start": "NODE_ENV=production node src/server.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "jest",
+    "prepare": "npm run lint && npm run format"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^7.2.0",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
-  }
+    "nodemon": "^3.1.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=18 <20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehankhan06731-cell/car-management.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rehankhan06731-cell/car-management/issues"
+  },
+  "homepage": "https://github.com/rehankhan06731-cell/car-management#readme",
+  "keywords": [
+    "express",
+    "sqlite3",
+    "car",
+    "management",
+    "api"
+  ],
+  "license": "MIT",
+  "author": "Duke <duke99347@gmail.com>"
 }
